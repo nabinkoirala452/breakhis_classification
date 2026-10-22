@@ -27,6 +27,11 @@ also do experiments with VLMs (small models) for classification for our comparis
 | nabin079bme023 (pulchowk) | nabinkoirala45 | 07 (20.9 h GPU left on 2026-10-22) |
 | nabinkoirala467 | nabinkoirala467 | in use by the user's other project (not for BreaKHis) |
 
+## Code repository
+
+GitHub: https://github.com/nabinkoirala452/breakhis_classification (public; first push 2026-10-22, commit b93c453).
+The local folder is being renamed to `breakhis_classification`.
+
 ## Data and outputs
 
 - Kaggle inputs: `nabinkoirala452/articafts` (binary folds/samples), `nabinkoirala452/articafts-notebook1-mc`
