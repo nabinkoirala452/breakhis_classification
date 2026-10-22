@@ -1,0 +1,24 @@
+{
+  "id": "nabinkoirala45/zoommoe-ablation-binary",
+  "title": "zoommoe-ablation-binary",
+  "code_file": "zoommoe-ablation-binary.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "nabinkoirala452/articafts",
+    "nabinkoirala452/code-files",
+    "nabinkoirala452/zoomoe-results-binary-multiclass",
+    "ambarish/breakhis"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4"
+}

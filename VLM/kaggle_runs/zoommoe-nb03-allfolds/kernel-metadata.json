@@ -1,0 +1,27 @@
+{
+  "id": "nabinkoirala452/zoommoe-nb03-allfolds",
+  "title": "zoommoe-nb03-allfolds",
+  "code_file": "zoommoe-nb03-allfolds.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "nabinkoirala452/articafts",
+    "nabinkoirala452/articafts-notebook1-mc",
+    "nabinkoirala452/code-files",
+    "nabinkoirala452/code-files-mc",
+    "nabinkoirala452/notebook2-articafts-breakhis",
+    "nabinkoirala452/notebook2-articafts-breakhis-mc",
+    "ambarish/breakhis"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "machine_shape": "NvidiaTeslaT4"
+}

@@ -1,0 +1,13 @@
+task,test,value (mean ± std over folds),folds passing
+binary,order permutation: AUC gap >= 0.01,-0.003 ± 0.016,1/5
+binary,patient probe on h: < 5x chance,11.562 ± 0.826,0/5
+binary,expert specialisation: I(E;M) >= 0.05 bits,0.786 ± 0.161,5/5
+binary,zoom gain: AUC lift >= 0.01,0.036 ± 0.023,4/5
+binary,ordinal structure monotone,5/5 folds,5/5
+binary,random-label control: AUC <= 0.60,0.499 ± 0.228,4/5
+multiclass,order permutation: AUC gap >= 0.01,-0.006 ± 0.022,1/5
+multiclass,patient probe on h: < 5x chance,13.166 ± 0.758,0/5
+multiclass,expert specialisation: I(E;M) >= 0.05 bits,0.817 ± 0.076,5/5
+multiclass,zoom gain: AUC lift >= 0.01,0.037 ± 0.077,3/5
+multiclass,ordinal structure monotone,5/5 folds,5/5
+multiclass,random-label control: AUC <= 0.60,0.515 ± 0.092,4/5
