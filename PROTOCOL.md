@@ -12,7 +12,7 @@
 
 ## 04 — zero-shot, linear probe, generative VLMs
 
-Script: [VLM/vlm_breakhis_classification.py](VLM/vlm_breakhis_classification.py)
+Script: [experiments/04_vlm_zeroshot_linear_probe.py](experiments/04_vlm_zeroshot_linear_probe.py)
 
 - Contrastive (CLIP ViT-B/16, SigLIP B/16, PLIP, QuiltNet B/32, BiomedCLIP): prompt ensemble of 5 templates
   × 2–3 class descriptions; softmax over logit-scaled cosine similarities.
@@ -25,7 +25,7 @@ Script: [VLM/vlm_breakhis_classification.py](VLM/vlm_breakhis_classification.py)
 
 ## 05 — full fine-tuning
 
-Script: [VLM/vlm_finetune.py](VLM/vlm_finetune.py)
+Script: [experiments/05_vlm_finetune.py](experiments/05_vlm_finetune.py)
 
 - Whole image encoder + linear head; the head is initialised from the model's own prompt-ensembled text
   embeddings (zero-shot head init, Wortsman et al., CVPR 2022).
@@ -36,9 +36,9 @@ Script: [VLM/vlm_finetune.py](VLM/vlm_finetune.py)
 
 ## 06 — ZoomMoE with a VLM backbone
 
-Script: [VLM/zoommoe_vlm.py](VLM/zoommoe_vlm.py)
+Script: [experiments/06_zoommoe_vlm_backbone.py](experiments/06_zoommoe_vlm_backbone.py)
 
-- [Binary Class/code_files/zoommoe_model.py](Binary%20Class/code_files/zoommoe_model.py) unchanged; only `MoEBackbone` is swapped. The ViT (QuiltNet / PLIP, ViT-B/32 → 7×7 patch
+- [src/binary/zoommoe_model.py](src/binary/zoommoe_model.py) unchanged; only `MoEBackbone` is swapped. The ViT (QuiltNet / PLIP, ViT-B/32 → 7×7 patch
   grid, the same as ResNet-50's 7×7 map) gets token-MoE blocks after block round(2L/3) and block L.
   The experts' output layers are zero-initialised, so each block starts as the identity.
 - Same 3 stages (8/15/8 epochs), lr 3e-4/3e-4/3e-5, batch 8, scale dropout 0.15, pooled pairing.
@@ -47,7 +47,7 @@ Script: [VLM/zoommoe_vlm.py](VLM/zoommoe_vlm.py)
 
 ## 07 — ZoomMoE ablations (binary)
 
-Script: [VLM/zoommoe_ablation.py](VLM/zoommoe_ablation.py)
+Script: [experiments/07_zoommoe_ablation.py](experiments/07_zoommoe_ablation.py)
 
 - Notebook 02 recipe exactly, ResNet-50, 5 folds; one change at a time, with the overrides from notebook 02's
   `ABLATIONS` dict: `no_moe` (moe_stages=()), `moe_mag_only` (cond_state_dim=0), `no_contrastive` (all
@@ -56,7 +56,7 @@ Script: [VLM/zoommoe_ablation.py](VLM/zoommoe_ablation.py)
 
 ## 08 — notebook-03 tests on all folds
 
-Script: [VLM/zoommoe_nb03_allfolds.py](VLM/zoommoe_nb03_allfolds.py)
+Script: [experiments/08_zoommoe_tests_all_folds.py](experiments/08_zoommoe_tests_all_folds.py)
 
 - Notebook 03's code, unchanged, looped over the 5 folds × 2 tasks with the notebook-02 checkpoints:
   order permutation (6 random orders + reversed), patient probe on h and z_inv (logistic regression,
@@ -68,7 +68,7 @@ Script: [VLM/zoommoe_nb03_allfolds.py](VLM/zoommoe_nb03_allfolds.py)
 
 ## 09 — same-backbone baselines
 
-Script: [VLM/zoommoe_baselines.py](VLM/zoommoe_baselines.py)
+Script: [experiments/09_resnet50_fusion_baselines.py](experiments/09_resnet50_fusion_baselines.py)
 
 - ImageNet ResNet-50 with ZoomMoE's exact training recipe (pooled pairing, scale dropout 0.15, augmentation,
   batch 8, 8/15/8 epochs, lr 3e-4/3e-4/3e-5, freeze to layer2 in the first two stages, AdamW 1e-4,

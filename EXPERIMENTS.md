@@ -8,13 +8,13 @@ also do experiments with VLMs (small models) for classification for our comparis
 
 | # | Experiment | Script | Kaggle notebook | Status |
 |---|---|---|---|---|
-| 01–03 | Protocol + baselines, ZoomMoE training, analysis | notebooks in [Binary Class/](Binary%20Class/), [MultiClass/](MultiClass/) | nabinkoirala452/mc-0x-…, breakhis-0x-… | done (Sept 2026) |
-| 04 | Zero-shot + linear probe + generative VLMs | [vlm_breakhis_classification.py](VLM/vlm_breakhis_classification.py) | nabinkoirala452/vlm-breakhis-classification (local copy [VLM/vlm-breakhis-classification.ipynb](VLM/vlm-breakhis-classification.ipynb)) | done 2026-10-20, ~5 h |
-| 05 | Full fine-tuning of 5 VLM image encoders | [vlm_finetune.py](VLM/vlm_finetune.py) | [nabinkoirala452/vlm-finetune](https://www.kaggle.com/code/nabinkoirala452/vlm-finetune) | done 2026-10-21, 2.41 h, 0 failures |
-| 06 | ZoomMoE with a VLM backbone (QuiltNet, PLIP) | [zoommoe_vlm.py](VLM/zoommoe_vlm.py) | [nabinkoirala53/zoommoe-vlm](https://www.kaggle.com/code/nabinkoirala53/zoommoe-vlm) | done 2026-10-22, 6.69 h, 0 failures (QuiltNet + PLIP, both tasks, ~40 min/fold) |
-| 07 | ZoomMoE training-time ablations, binary | [zoommoe_ablation.py](VLM/zoommoe_ablation.py), pushed via API from [VLM/kaggle_runs/zoommoe-ablation-binary/](VLM/kaggle_runs/zoommoe-ablation-binary/) | [nabinkoirala45/zoommoe-ablation-binary](https://www.kaggle.com/code/nabinkoirala45/zoommoe-ablation-binary) (Gmail nabin079bme023 / pulchowk) | done 2026-10-22, 9.14 h, 30/30 jobs (6 variants × 5 folds), 0 failures, ~35 min/job; all input checks passed |
-| 08 | Notebook-03 tests on all 5 folds, both tasks (+ random-label control) | [zoommoe_nb03_allfolds.py](VLM/zoommoe_nb03_allfolds.py) | [nabinkoirala452/zoommoe-nb03-allfolds](https://www.kaggle.com/code/nabinkoirala452/zoommoe-nb03-allfolds) (Gmail nabinkoirala53) | done 2026-10-22, 98 min, 10/10 folds; every checkpoint reproduced notebook 02 exactly |
-| 09 | Same-backbone baselines: ResNet-50 late_avg / mean_fusion / concat_fusion, ZoomMoE recipe, both tasks | [zoommoe_baselines.py](VLM/zoommoe_baselines.py) | [nabinkoirala53/zoommoe-baselines-resnet50](https://www.kaggle.com/code/nabinkoirala53/zoommoe-baselines-resnet50) (Gmail nabinkoirala452) | done 2026-10-22, 4.13 h, 30/30 jobs, 0 failures, ~16 min/job |
+| 01–03 | Protocol + baselines, ZoomMoE training, analysis | notebooks in [notebooks/binary/](notebooks/binary/), [notebooks/multiclass/](notebooks/multiclass/) | nabinkoirala452/mc-0x-…, breakhis-0x-… | done (Sept 2026) |
+| 04 | Zero-shot + linear probe + generative VLMs | [04_vlm_zeroshot_linear_probe.py](experiments/04_vlm_zeroshot_linear_probe.py) | nabinkoirala452/vlm-breakhis-classification (local copy [results/04_vlm_zeroshot_linear_probe/vlm-breakhis-classification_executed.ipynb](results/04_vlm_zeroshot_linear_probe/vlm-breakhis-classification_executed.ipynb)) | done 2026-10-20, ~5 h |
+| 05 | Full fine-tuning of 5 VLM image encoders | [05_vlm_finetune.py](experiments/05_vlm_finetune.py) | [nabinkoirala452/vlm-finetune](https://www.kaggle.com/code/nabinkoirala452/vlm-finetune) | done 2026-10-21, 2.41 h, 0 failures |
+| 06 | ZoomMoE with a VLM backbone (QuiltNet, PLIP) | [06_zoommoe_vlm_backbone.py](experiments/06_zoommoe_vlm_backbone.py) | [nabinkoirala53/zoommoe-vlm](https://www.kaggle.com/code/nabinkoirala53/zoommoe-vlm) | done 2026-10-22, 6.69 h, 0 failures (QuiltNet + PLIP, both tasks, ~40 min/fold) |
+| 07 | ZoomMoE training-time ablations, binary | [07_zoommoe_ablation.py](experiments/07_zoommoe_ablation.py), pushed via API from [experiments/kaggle/runs/zoommoe-ablation-binary/](experiments/kaggle/runs/zoommoe-ablation-binary/) | [nabinkoirala45/zoommoe-ablation-binary](https://www.kaggle.com/code/nabinkoirala45/zoommoe-ablation-binary) (Gmail nabin079bme023 / pulchowk) | done 2026-10-22, 9.14 h, 30/30 jobs (6 variants × 5 folds), 0 failures, ~35 min/job; all input checks passed |
+| 08 | Notebook-03 tests on all 5 folds, both tasks (+ random-label control) | [08_zoommoe_tests_all_folds.py](experiments/08_zoommoe_tests_all_folds.py) | [nabinkoirala452/zoommoe-nb03-allfolds](https://www.kaggle.com/code/nabinkoirala452/zoommoe-nb03-allfolds) (Gmail nabinkoirala53) | done 2026-10-22, 98 min, 10/10 folds; every checkpoint reproduced notebook 02 exactly |
+| 09 | Same-backbone baselines: ResNet-50 late_avg / mean_fusion / concat_fusion, ZoomMoE recipe, both tasks | [09_resnet50_fusion_baselines.py](experiments/09_resnet50_fusion_baselines.py) | [nabinkoirala53/zoommoe-baselines-resnet50](https://www.kaggle.com/code/nabinkoirala53/zoommoe-baselines-resnet50) (Gmail nabinkoirala452) | done 2026-10-22, 4.13 h, 30/30 jobs, 0 failures, ~16 min/job |
 
 ## Kaggle accounts
 
@@ -37,8 +37,8 @@ The local folder is being renamed to `breakhis_classification`.
 - Kaggle inputs: `nabinkoirala452/articafts` (binary folds/samples), `nabinkoirala452/articafts-notebook1-mc`
   (8-class), `nabinkoirala452/code-files`, `nabinkoirala452/code-files-mc`,
   `nabinkoirala452/zoomoe-results-binary-multiclass`, images `ambarish/breakhis`.
-- Local copies of results: [VLM/results/vlm_finetune/](VLM/results/vlm_finetune/), [VLM/results/zoommoe_vlm/](VLM/results/zoommoe_vlm/), [VLM/results/zoommoe_ablation_binary/](VLM/results/zoommoe_ablation_binary/), [VLM/results/nb03_allfolds/](VLM/results/nb03_allfolds/), [VLM/results/baselines_resnet50/](VLM/results/baselines_resnet50/) (CSVs + log; the ~9 GB of checkpoints stay on Kaggle),
-  [zoommoe_results.csv](zoommoe_results.csv), [zoommoe_multiclass_results.csv](zoommoe_multiclass_results.csv) (ZoomMoE + ResNet-50 per fold).
+- Local copies of results: [results/05_vlm_finetune/](results/05_vlm_finetune/), [results/06_zoommoe_vlm_backbone/](results/06_zoommoe_vlm_backbone/), [results/07_zoommoe_ablation_binary/](results/07_zoommoe_ablation_binary/), [results/08_zoommoe_tests_all_folds/](results/08_zoommoe_tests_all_folds/), [results/09_resnet50_fusion_baselines/](results/09_resnet50_fusion_baselines/) (CSVs + log; the ~9 GB of checkpoints stay on Kaggle),
+  [zoommoe_binary_results.csv](results/02_zoommoe_resnet50/zoommoe_binary_results.csv), [zoommoe_multiclass_results.csv](results/02_zoommoe_resnet50/zoommoe_multiclass_results.csv) (ZoomMoE + ResNet-50 per fold).
 
 ## Run costs
 
@@ -61,7 +61,7 @@ The local folder is being renamed to `breakhis_classification`.
 ## Input verification for 07 (2026-10-21)
 
 Downloaded from Kaggle and checked, not assumed:
-- `code-files/breakhis_common.py` is identical to [Binary Class/code_files/breakhis_common.py](Binary%20Class/code_files/breakhis_common.py).
+- `code-files/breakhis_common.py` is identical to [src/binary/breakhis_common.py](src/binary/breakhis_common.py).
 - `code-files/zoommoe_model.py` differs from the model the binary notebook 02 trained, which was written by
   its own `%%writefile` cell, in exactly one line: the fp16 `scatter` dtype fix. The unpatched line crashes
   under AMP. 07 applies that single-line patch at load time; the patched file was diffed equal to the
@@ -77,7 +77,7 @@ Downloaded from Kaggle and checked, not assumed:
 
 ## Code review of the local code files (2026-10-21)
 
-Local `Binary Class/code_files/*` and `MultiClass/code_files_mc/*` are byte-identical (ignoring line endings)
+Local `src/binary/*` and `src/multiclass/*` are byte-identical (ignoring line endings)
 to the Kaggle datasets `code-files` / `code-files-mc`. Those datasets are what notebooks 01 and 03 (both tasks)
 and the 8-class notebook 02 loaded. The binary notebook 02 alone used its own `%%writefile` model.
 Binary and 8-class versions differ only in label handling (float/BCE vs long/CE, 1 vs 8 outputs, the
