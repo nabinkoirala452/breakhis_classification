@@ -18,6 +18,11 @@ also do experiments with VLMs (small models) for classification for our comparis
 
 ## Kaggle accounts
 
+The 12 project notebooks linked in README.md were made public on 2026-10-25, by the user in the Kaggle UI; I verified each
+from a non-owner account. Still private: `mc-02-zoommoe-train-exp1-ipynb` and the crashed first ablation
+`nabinkoirala452/zoommoe-ablation-binary`.
+
+
 `.env` labels are Gmail names; the Kaggle usernames differ:
 
 | Gmail (label) | Kaggle user | Used for |

@@ -44,7 +44,7 @@ All experiments run on Kaggle (GPU T4 ×2) on the same patient-disjoint folds fr
 | 08 | Notebook-03 tests on all 5 folds, both tasks | [experiments/08_zoommoe_tests_all_folds.py](experiments/08_zoommoe_tests_all_folds.py) | [zoommoe-nb03-allfolds](https://www.kaggle.com/code/nabinkoirala452/zoommoe-nb03-allfolds) | [results/08_zoommoe_tests_all_folds/](results/08_zoommoe_tests_all_folds/) |
 | 09 | Same-backbone ResNet-50 fusion baselines | [experiments/09_resnet50_fusion_baselines.py](experiments/09_resnet50_fusion_baselines.py) | [zoommoe-baselines-resnet50](https://www.kaggle.com/code/nabinkoirala53/zoommoe-baselines-resnet50) | [results/09_resnet50_fusion_baselines/](results/09_resnet50_fusion_baselines/) |
 
-The Kaggle notebooks are private; the links open for their owner accounts.
+All Kaggle notebooks listed here are public (verified 2026-10-25), including their outputs.
 Experiments 07–09 were pushed through the Kaggle API from [experiments/kaggle/runs/](experiments/kaggle/runs/)
 with [experiments/kaggle/build_notebook.py](experiments/kaggle/build_notebook.py).
 
